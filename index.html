@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="fr" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horizon Web — Agence de création de sites web</title>
+  <meta name="description" content="Horizon Web conçoit des sites web modernes, rapides et sur mesure pour les entreprises qui veulent voir plus loin.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#ffffff">
+  <script>
+    // Applique le thème avant l'affichage pour éviter un flash blanc :
+    // choix mémorisé sur le site, sinon préférence de l'appareil.
+    (function () {
+      var theme = null;
+      try { theme = localStorage.getItem("theme"); } catch (e) {}
+      if (theme !== "light" && theme !== "dark") {
+        theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      }
+      document.documentElement.setAttribute("data-theme", theme);
+      document.querySelector('meta[name="theme-color"]').setAttribute("content", theme === "dark" ? "#0f0d1f" : "#ffffff");
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- En-tête -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#accueil" class="logo">
+        <span class="logo__mark" aria-hidden="true"></span>
+        Horizon<span class="logo__accent">Web</span>
+      </a>
+
+      <div class="header__actions">
+        <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav">
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav class="nav" id="nav">
+          <ul class="nav__list">
+            <li><a href="#services" class="nav__link">Services</a></li>
+            <li><a href="#methode" class="nav__link">Méthode</a></li>
+            <li><a href="#apropos" class="nav__link">À propos</a></li>
+            <li><a href="#realisations" class="nav__link">Réalisations</a></li>
+            <li><a href="#temoignages" class="nav__link">Témoignages</a></li>
+            <li><a href="#contact" class="btn btn--small">Nous contacter</a></li>
+          </ul>
+        </nav>
+
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Mode sombre" aria-pressed="false" title="Activer le mode sombre">
+          <svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Accueil -->
+    <section class="hero" id="accueil">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="hero__badge">
+            <span class="pulse" aria-hidden="true"></span>
+            Disponibles pour de nouveaux projets en octobre
+          </p>
+          <p class="eyebrow">Agence web · Design &amp; développement</p>
+          <h1 class="hero__title">Votre présence en ligne, <span class="gradient-text">sans limite d'horizon.</span></h1>
+          <p class="hero__text">
+            Nous créons des sites web modernes, rapides et pensés pour vos clients.
+            De l'idée à la mise en ligne, on s'occupe de tout.
+          </p>
+          <div class="hero__actions">
+            <a href="#contact" class="btn">
+              Démarrer un projet
+              <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="#realisations" class="btn btn--ghost">Voir nos réalisations</a>
+          </div>
+
+          <div class="hero__trust">
+            <div class="avatars" aria-hidden="true">
+              <span class="avatar avatar--sm">CL</span>
+              <span class="avatar avatar--sm">MB</span>
+              <span class="avatar avatar--sm">SV</span>
+              <span class="avatar avatar--sm avatar--more">+</span>
+            </div>
+            <p>
+              <span class="stars" aria-label="Note de 4,9 sur 5">★★★★★</span>
+              <strong>4,9/5</strong> d'après plus de 120 clients
+            </p>
+          </div>
+
+          <ul class="hero__stats">
+            <li><strong data-count="120" data-suffix="+">120+</strong><span>sites livrés</span></li>
+            <li><strong data-count="98" data-suffix="&nbsp;%">98&nbsp;%</strong><span>clients satisfaits</span></li>
+            <li><strong data-count="8" data-suffix=" ans">8 ans</strong><span>d'expérience</span></li>
+          </ul>
+        </div>
+
+        <div class="hero__visual" aria-hidden="true">
+          <div class="sun"></div>
+          <div class="mockup">
+            <div class="mockup__bar">
+              <span></span><span></span><span></span>
+              <div class="mockup__url">horizon-web.fr</div>
+            </div>
+            <div class="mockup__body">
+              <div class="mockup__nav">
+                <i class="mockup__logo"></i>
+                <i></i><i></i><i></i>
+              </div>
+              <div class="mockup__line mockup__line--lg"></div>
+              <div class="mockup__line"></div>
+              <div class="mockup__line mockup__line--sm"></div>
+              <div class="mockup__cta"></div>
+              <div class="mockup__grid">
+                <div></div><div></div><div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="float-card float-card--score">
+            <div class="score-ring"><span>98</span></div>
+            <div>
+              <strong>Performance</strong>
+              <span>Score Lighthouse</span>
+            </div>
+          </div>
+
+          <div class="float-card float-card--growth">
+            <div class="float-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 17 6-6 4 4 8-8M15 7h6v6"/></svg>
+            </div>
+            <div>
+              <strong>+40&nbsp;%</strong>
+              <span>de visites en 3 mois</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#services" class="scroll-hint" aria-label="Découvrir nos services">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- Bandeau clients -->
+    <section class="logos" aria-label="Ils nous font confiance">
+      <div class="container">
+        <p class="logos__title">Ils nous font confiance</p>
+        <ul class="logos__list">
+          <li>Levain&nbsp;&amp;&nbsp;Co</li>
+          <li>Atelier&nbsp;Nordik</li>
+          <li>Verdier&nbsp;Avocats</li>
+          <li>Maison&nbsp;Solène</li>
+          <li>Kinetik&nbsp;Sport</li>
+          <li>Les&nbsp;Jardins&nbsp;d'Iris</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section" id="services">
+      <div class="container">
+        <header class="section__header reveal">
+          <p class="eyebrow">Nos services</p>
+          <h2 class="section__title">Tout ce qu'il faut pour briller en ligne</h2>
+          <p class="section__subtitle">Une équipe, un interlocuteur, et des solutions adaptées à votre activité.</p>
+        </header>
+
+        <div class="cards">
+          <article class="card reveal">
+            <div class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8"/></svg>
+            </div>
+            <h3 class="card__title">Sites vitrines</h3>
+            <p class="card__text">Des sites élégants et responsives qui présentent votre entreprise sous son meilleur jour.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.7 12.4a2 2 0 0 0 2 1.6h7.6a2 2 0 0 0 2-1.5L21 8H6"/></svg>
+            </div>
+            <h3 class="card__title">E-commerce</h3>
+            <p class="card__text">Des boutiques en ligne performantes, simples à gérer et optimisées pour la conversion.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+            </div>
+            <h3 class="card__title">Référencement (SEO)</h3>
+            <p class="card__text">Gagnez en visibilité sur Google grâce à une stratégie de contenu et une technique solides.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="card__title">Maintenance &amp; sécurité</h3>
+            <p class="card__text">Mises à jour, sauvegardes et surveillance : votre site reste rapide et protégé.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Méthode -->
+    <section class="section section--dark" id="methode">
+      <div class="container">
+        <header class="section__header reveal">
+          <p class="eyebrow">Notre méthode</p>
+          <h2 class="section__title">Un projet clair, en 4 étapes</h2>
+          <p class="section__subtitle">Vous savez toujours où en est votre site, et ce qui vient ensuite.</p>
+        </header>
+
+        <ol class="steps">
+          <li class="step reveal">
+            <span class="step__num">01</span>
+            <h3>Écoute</h3>
+            <p>Un premier appel gratuit pour cerner vos objectifs, votre clientèle et vos envies.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__num">02</span>
+            <h3>Conception</h3>
+            <p>Des maquettes sur mesure, que vous validez avant la moindre ligne de code.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__num">03</span>
+            <h3>Développement</h3>
+            <p>Un site rapide, sécurisé, adapté au mobile et optimisé pour Google.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__num">04</span>
+            <h3>Lancement &amp; suivi</h3>
+            <p>Mise en ligne, prise en main accompagnée et suivi dans la durée.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- À propos -->
+    <section class="section section--alt" id="apropos">
+      <div class="container split">
+        <div class="split__visual reveal" aria-hidden="true">
+          <div class="about-shape">
+            <span class="about-shape__badge">Depuis 2018</span>
+          </div>
+        </div>
+        <div class="split__content reveal">
+          <p class="eyebrow">À propos</p>
+          <h2 class="section__title">Une agence à taille humaine, des ambitions à perte de vue</h2>
+          <p>
+            Fondée en 2018, Horizon Web accompagne les indépendants, PME et associations
+            dans leur transformation numérique. Notre conviction : un bon site est avant tout
+            un site utile, clair et agréable à utiliser.
+          </p>
+          <ul class="checklist">
+            <li>Un accompagnement personnalisé, du premier appel à la mise en ligne</li>
+            <li>Des sites rapides, accessibles et adaptés au mobile</li>
+            <li>Des tarifs transparents, sans surprise</li>
+          </ul>
+          <a href="#contact" class="btn">Parlons de votre projet</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Réalisations -->
+    <section class="section" id="realisations">
+      <div class="container">
+        <header class="section__header reveal">
+          <p class="eyebrow">Réalisations</p>
+          <h2 class="section__title">Quelques projets récents</h2>
+        </header>
+
+        <div class="projects">
+          <article class="project reveal">
+            <div class="project__thumb project__thumb--1"></div>
+            <div class="project__info">
+              <span class="tag">Site vitrine</span>
+              <h3>Boulangerie Levain &amp; Co</h3>
+              <p>Un site chaleureux avec commande de viennoiseries en ligne.</p>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <div class="project__thumb project__thumb--2"></div>
+            <div class="project__info">
+              <span class="tag">E-commerce</span>
+              <h3>Atelier Nordik</h3>
+              <p>Boutique de mobilier scandinave, +40&nbsp;% de ventes en 6 mois.</p>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <div class="project__thumb project__thumb--3"></div>
+            <div class="project__info">
+              <span class="tag">Refonte &amp; SEO</span>
+              <h3>Cabinet Verdier Avocats</h3>
+              <p>Refonte complète et première page Google sur ses mots-clés.</p>
+            </div>
+          </article>
+        </div>
+
+        <aside class="cta-banner reveal">
+          <div>
+            <h2>Et si le prochain projet, c'était le vôtre&nbsp;?</h2>
+            <p>Devis gratuit et sans engagement, réponse sous 24&nbsp;h ouvrées.</p>
+          </div>
+          <a href="#contact" class="btn btn--light">Demander un devis</a>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Témoignages -->
+    <section class="section section--alt" id="temoignages">
+      <div class="container">
+        <header class="section__header reveal">
+          <p class="eyebrow">Témoignages</p>
+          <h2 class="section__title">Ils nous ont fait confiance</h2>
+        </header>
+
+        <div class="testimonials">
+          <figure class="testimonial reveal">
+            <blockquote>« Une équipe à l'écoute, réactive et de très bon conseil. Notre nouveau site nous ressemble enfin&nbsp;! »</blockquote>
+            <figcaption><span class="avatar">CL</span><div><strong>Claire L.</strong><span>Gérante, Levain &amp; Co</span></div></figcaption>
+          </figure>
+
+          <figure class="testimonial reveal">
+            <blockquote>« Le projet a été livré dans les délais et le résultat dépasse nos attentes. Je recommande sans hésiter. »</blockquote>
+            <figcaption><span class="avatar">MB</span><div><strong>Mathieu B.</strong><span>Fondateur, Atelier Nordik</span></div></figcaption>
+          </figure>
+
+          <figure class="testimonial reveal">
+            <blockquote>« Des explications claires à chaque étape, même pour quelqu'un qui n'y connaît rien en informatique. »</blockquote>
+            <figcaption><span class="avatar">SV</span><div><strong>Sophie V.</strong><span>Avocate associée</span></div></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+      <div class="container contact">
+        <div class="contact__info reveal">
+          <p class="eyebrow">Contact</p>
+          <h2 class="section__title">Un projet en tête&nbsp;?</h2>
+          <p>Racontez-nous votre idée, nous vous répondons sous 24&nbsp;h ouvrées avec une première estimation gratuite.</p>
+          <ul class="contact__list">
+            <li><strong>E-mail</strong><span>bonjour@horizon-web.fr</span></li>
+            <li><strong>Téléphone</strong><span>01 23 45 67 89</span></li>
+            <li><strong>Adresse</strong><span>12 rue de l'Aurore, 75011 Paris</span></li>
+          </ul>
+        </div>
+
+        <form class="form reveal" id="contact-form" novalidate>
+          <div class="form__row">
+            <div class="form__group">
+              <label for="nom">Nom</label>
+              <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+            </div>
+            <div class="form__group">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" placeholder="vous@exemple.fr" required>
+            </div>
+          </div>
+          <div class="form__group">
+            <label for="projet">Type de projet</label>
+            <select id="projet" name="projet">
+              <option>Site vitrine</option>
+              <option>E-commerce</option>
+              <option>Référencement</option>
+              <option>Autre</option>
+            </select>
+          </div>
+          <div class="form__group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Parlez-nous de votre projet…" required></textarea>
+          </div>
+          <button type="submit" class="btn btn--full">Envoyer le message</button>
+          <p class="form__feedback" id="form-feedback" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Pied de page -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="#accueil" class="logo logo--light">
+        <span class="logo__mark" aria-hidden="true"></span>
+        Horizon<span class="logo__accent">Web</span>
+      </a>
+      <p>&copy; <span id="year"></span> Horizon Web. Entreprise fictive — tous droits réservés.</p>
+      <ul class="footer__links">
+        <li><a href="#">Mentions légales</a></li>
+        <li><a href="#">Confidentialité</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
