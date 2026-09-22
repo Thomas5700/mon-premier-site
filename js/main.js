@@ -163,31 +163,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const feedback = document.getElementById("form-feedback");
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  form.addEventListener("submit", () => {
-
-    const fields = [form.nom, form.email, form.message];
-    let isValid = true;
-
-    fields.forEach((field) => {
-      const value = field.value.trim();
-      const fieldValid = field === form.email ? emailPattern.test(value) : value.length > 0;
-      field.classList.toggle("is-invalid", !fieldValid);
-      if (!fieldValid) isValid = false;
-    });
-
-    feedback.classList.remove("is-success", "is-error");
-
-    if (!isValid) {
-      feedback.textContent = "Merci de remplir correctement tous les champs.";
-      feedback.classList.add("is-error");
-      return;
-    }
-
-    feedback.textContent = `Merci ${form.nom.value.trim()} ! Votre message a bien été envoyé. Nous vous répondons très vite.`;
-    feedback.classList.add("is-success");
-    form.reset();
-  });
-
   // Retire l'erreur dès que l'utilisateur corrige un champ
   form.querySelectorAll("input, textarea").forEach((field) => {
     field.addEventListener("input", () => field.classList.remove("is-invalid"));
