@@ -164,7 +164,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   form.addEventListener("submit", (event) => {
-    event.preventDefault();
 
     const fields = [form.nom, form.email, form.message];
     let isValid = true;
