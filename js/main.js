@@ -163,7 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const feedback = document.getElementById("form-feedback");
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  form.addEventListener("submit", (event) => {
+  form.addEventListener("submit", () => {
 
     const fields = [form.nom, form.email, form.message];
     let isValid = true;
